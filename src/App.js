@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-
+import Card from './components/Card';
 const cardImages =[
   {"src":"img/allium.jpg"}, 
   {"src":"img/bastu.jpg"}, 
@@ -30,13 +30,8 @@ const [showFront, setShowFront]=useState(0)
     <div className="App">
       <p>Hello World!</p>
       <button onClick={shuffleCards}>Deal!</button>
-      <div>{cards.map(card => (
-        <div className='card' key={card.id}>
-         <div> 
-<img className="front" src={card.src}></img>
-<img src="img/background.png"  alt ="card back"/>
-        </div>
-        </div>
+      <div className='card-grid'>{cards.map(card => (   
+       <Card key={card.id} card={card}/>
       ))}
       </div>
     </div>

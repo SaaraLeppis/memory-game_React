@@ -26,8 +26,14 @@ button{
   padding: 5px 15px;
   border-radius: 5px;
 }
-.front{
-  width:50px; 
+.card-grid{
+margin-top: 40px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-gap: 20px;
+}
+.front, .back{
+  width:150px 
 
 }
 
