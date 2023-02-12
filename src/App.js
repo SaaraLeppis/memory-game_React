@@ -15,6 +15,10 @@ function App() {
 const [cards, setCards]=useState([])
 const [turns, setTurns]=useState(0)
 const [showFront, setShowFront]=useState(0)
+const [firstChoise, setFirstChoise]=useState(null)
+const [secondChoise, setSecondChoise]=useState(null)
+
+
 
   // shuffle cards 
   const shuffleCards=()=>{
@@ -26,14 +30,22 @@ const [showFront, setShowFront]=useState(0)
     setTurns(0)
   }
 
+  //handle a choise 
+  const handleChoise=(card)=>{
+    console.log(card, 'imcard')
+    firstChoise ? setSecondChoise (card) : setFirstChoise(card)
+
+  }
+
+
   return (
     <div className="App">
       <p>Hello World!</p>
       <button onClick={shuffleCards}>Deal!</button>
       <div className='card-grid'>{cards.map(card => (   
-       <Card key={card.id} card={card}/>
-      ))}
-      </div>
+       <Card key={card.id} card={card} handleChoise={handleChoise}/>
+       ))}
+       </div>
     </div>
   );
 }
