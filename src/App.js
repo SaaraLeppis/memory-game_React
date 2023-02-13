@@ -2,12 +2,12 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Card from './components/Card';
 const cardImages =[
-  {"src":"img/allium.jpg"}, 
-  {"src":"img/bastu.jpg"}, 
-  {"src":"img/blackDoggo.jpg"}, 
-  {"src":"img/cuteDoggo.jpg"}, 
-  {"src":"img/katrin-hauf-l5NYUg6bkFA-unsplash.jpg"}, 
-  {"src":"img/pattern1.png"}, 
+  {"src":"img/allium.jpg",matched:false}, 
+  {"src":"img/bastu.jpg",matched:false}, 
+  {"src":"img/blackDoggo.jpg",matched:false}, 
+  {"src":"img/cuteDoggo.jpg",matched:false}, 
+  {"src":"img/katrin-hauf-l5NYUg6bkFA-unsplash.jpg",matched:false}, 
+  {"src":"img/pattern1.png",matched:false}, 
 ]
 
 function App() {
@@ -41,16 +41,24 @@ const [secondChoise, setSecondChoise]=useState(null)
   useEffect(()=>{
     if (firstChoise && secondChoise){
       if (firstChoise.src === secondChoise.src){
-        console.log('Match! ')
+        setCards(prevCards=>{
+          return prevCards.map(card=> {
+            if (card.src === firstChoise.src){
+              return {...card, matched:true}
+            }
+            else{
+              return card
+            }
+          })
+        })
         resetTurn()
       }
     else{
-      console.log('no match')
       resetTurn()
     }}
 
   }, [firstChoise, secondChoise])
-
+console.log(cards)
 
   //reset & increase turn 
   const resetTurn=()=>{
@@ -58,6 +66,7 @@ const [secondChoise, setSecondChoise]=useState(null)
     setSecondChoise(null)
     // check following as in tutorial prev turnes 
     setTurns(turns+1)
+    console.log('turns are now', turns)
   }
 
 

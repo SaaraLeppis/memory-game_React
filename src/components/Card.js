@@ -2,13 +2,9 @@
 import './Card.css'
 
 export default  function Card ({card, handleChoise}) {
-    console.log(card)
-
 const clickHandler=() =>{
     handleChoise(card)    
 }
-
-
     return (
         <div className='card'>
         <div> 
