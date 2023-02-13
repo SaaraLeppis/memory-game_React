@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from './components/Card';
 const cardImages =[
   {"src":"img/allium.jpg"}, 
@@ -30,11 +30,34 @@ const [secondChoise, setSecondChoise]=useState(null)
     setTurns(0)
   }
 
+
   //handle a choise 
   const handleChoise=(card)=>{
-    console.log(card, 'imcard')
     firstChoise ? setSecondChoise (card) : setFirstChoise(card)
+    
+  }
 
+  // compare 2 selected cards
+  useEffect(()=>{
+    if (firstChoise && secondChoise){
+      if (firstChoise.src === secondChoise.src){
+        console.log('Match! ')
+        resetTurn()
+      }
+    else{
+      console.log('no match')
+      resetTurn()
+    }}
+
+  }, [firstChoise, secondChoise])
+
+
+  //reset & increase turn 
+  const resetTurn=()=>{
+    setFirstChoise(null)
+    setSecondChoise(null)
+    // check following as in tutorial prev turnes 
+    setTurns(turns+1)
   }
 
 
