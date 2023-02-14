@@ -13,9 +13,9 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
-  const [showFront, setShowFront] = useState(0);
   const [firstChoise, setFirstChoise] = useState(null);
   const [secondChoise, setSecondChoise] = useState(null);
+  const [disabled, setDisabled] =useState(false);
 
   // shuffle cards
   const shuffleCards = () => {
@@ -35,6 +35,7 @@ function App() {
   // compare 2 selected cards
   useEffect(() => {
     if (firstChoise && secondChoise) {
+      setDisabled(true)
       if (firstChoise.src === secondChoise.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -57,9 +58,10 @@ function App() {
   const resetTurn = () => {
     setFirstChoise(null);
     setSecondChoise(null);
-    // check following as in tutorial prev turnes
+    // check following as in tutorial prevTurns => prevTurns +1
     setTurns(turns + 1);
     console.log("turns are now", turns);
+    setDisabled (false)
   };
 
   return (
@@ -75,6 +77,7 @@ function App() {
             flipped={
               card === firstChoise || card === secondChoise || card.matched
             }
+            disabled={disabled}
           />
         ))}
       </div>

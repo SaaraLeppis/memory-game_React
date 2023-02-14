@@ -1,9 +1,11 @@
 //import React from 'react';
 import "./Card.css";
 
-export default function Card({ card, handleChoise, flipped }) {
+export default function Card({ card, handleChoise, flipped, disabled }) {
   const clickHandler = () => {
-    handleChoise(card);
+    if(!disabled){
+    handleChoise(card)
+    };
   };
   return (
     <div className="card">
