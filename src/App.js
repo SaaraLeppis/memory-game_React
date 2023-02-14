@@ -22,7 +22,8 @@ function App() {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
-
+    setFirstChoise(null)
+    setSecondChoise(null)
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -64,9 +65,14 @@ function App() {
     setDisabled (false)
   };
 
+  //start new game automatically onlaunch 
+  useEffect(()=>{
+    shuffleCards()
+  }, [])
+
   return (
     <div className="App">
-      <p>Hello World!</p>
+      <h1>memory</h1>
       <button onClick={shuffleCards}>Deal!</button>
       <div className="card-grid">
         {cards.map((card) => (
@@ -81,6 +87,7 @@ function App() {
           />
         ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Port+Lligat+Slab&display=swap');
 
 * {
   margin: 0;
@@ -15,10 +15,13 @@
   --dark: #3b3535;
 }
 body {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Poppins', Georgia, serif;
   color: var(--effect); 
   background-color: var(--light); 
 text-align: center;}
+h1{
+  font-family: 'Port Lligat Slab', Georgia, serif;
+}
 button{
   background-color: var(--dark);
   color: var(--mid);
