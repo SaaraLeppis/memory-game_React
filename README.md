@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# Simple Memory Game with React
+Simple memory game build with React. 
+It counts the turns and you can start new game whenever wanted. 
+Fun to build! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Build with 
+React  
+CSS 
 
 ## Available Scripts
 
@@ -11,10 +16,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ## Thanks
-Black phone 
-Photo by <a href="https://unsplash.com/@trine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Katrin Hauf</a> on <a href="https://unsplash.com/photos/l5NYUg6bkFA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Following tutorial [Memory Game with React](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iQ7g2eoNXHCJBBBz40S_Lm) by **[The Net Ninja](https://netninja.dev/)**
+
+Black phone- picture 
+by **[Katrin Hauf](https://unsplash.com/@trine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)** on [Unsplash](https://unsplash.com/photos/l5NYUg6bkFA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
+
   
