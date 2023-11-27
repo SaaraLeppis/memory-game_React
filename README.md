@@ -47,8 +47,6 @@ by **[Katrin Hauf](https://unsplash.com/@trine?utm_source=unsplash&utm_medium=re
 
 🪄 Possibility to select different amount of cards
 
-🪄 Responsiveness for mobile
-
 ### Note!
 
 [Update Node Packages](https://medium.com/subjective-developer/update-all-node-packages-to-latest-aa128396b92b)

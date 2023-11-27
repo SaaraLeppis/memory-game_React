@@ -61,7 +61,6 @@ function App() {
     setSecondChoise(null);
     // check following as in tutorial prevTurns => prevTurns +1
     setTurns(turns + 1);
-    console.log("turns are now", turns);
     setDisabled(false);
   };
 
