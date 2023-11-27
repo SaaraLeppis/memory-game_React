@@ -15,15 +15,15 @@ function App() {
   const [turns, setTurns] = useState(0);
   const [firstChoise, setFirstChoise] = useState(null);
   const [secondChoise, setSecondChoise] = useState(null);
-  const [disabled, setDisabled] =useState(false);
+  const [disabled, setDisabled] = useState(false);
 
   // shuffle cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
-    setFirstChoise(null)
-    setSecondChoise(null)
+    setFirstChoise(null);
+    setSecondChoise(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -36,7 +36,7 @@ function App() {
   // compare 2 selected cards
   useEffect(() => {
     if (firstChoise && secondChoise) {
-      setDisabled(true)
+      setDisabled(true);
       if (firstChoise.src === secondChoise.src) {
         setCards((prevCards) => {
           return prevCards.map((card) => {
@@ -52,6 +52,7 @@ function App() {
         setTimeout(() => resetTurn(), 1000);
       }
     }
+    // eslint-disable-next-line
   }, [firstChoise, secondChoise]);
   console.log(cards);
 
@@ -62,13 +63,13 @@ function App() {
     // check following as in tutorial prevTurns => prevTurns +1
     setTurns(turns + 1);
     console.log("turns are now", turns);
-    setDisabled (false)
+    setDisabled(false);
   };
 
-  //start new game automatically onlaunch 
-  useEffect(()=>{
-    shuffleCards()
-  }, [])
+  //start new game automatically onlaunch
+  useEffect(() => {
+    shuffleCards();
+  }, []);
 
   return (
     <div className="App">
