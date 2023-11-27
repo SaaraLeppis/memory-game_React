@@ -54,7 +54,6 @@ function App() {
     }
     // eslint-disable-next-line
   }, [firstChoise, secondChoise]);
-  console.log(cards);
 
   //reset & increase turn
   const resetTurn = () => {
