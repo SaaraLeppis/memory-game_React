@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Port+Lligat+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Port+Lligat+Slab&display=swap");
 
 * {
   margin: 0;
@@ -15,19 +15,20 @@
   --dark: #3b3535;
 }
 body {
-  font-family: 'Poppins', Georgia, serif;
-  color: var(--effect); 
-  background-color: var(--light); 
-text-align: center;
-height: 100vh}
-.App{
+  font-family: "Poppins", Georgia, serif;
+  color: var(--effect);
+  background-color: var(--light);
+  text-align: center;
+  height: 100vh;
+}
+.App {
   padding: 10px;
 }
-h1{
-  font-family: 'Port Lligat Slab', Georgia, serif;
+h1 {
+  font-family: "Port Lligat Slab", Georgia, serif;
   margin-bottom: 10px;
 }
-button{
+button {
   background-color: var(--dark);
   border: 2px solid var(--dark);
   color: var(--mid);
@@ -36,19 +37,31 @@ button{
   padding: 5px 15px;
   border-radius: 5px;
 }
-button:hover{
-  color: var(--dark); 
+button:hover {
+  color: var(--dark);
   background-color: var(--light);
-
 }
-.card-grid{
-margin: 40px;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-gap: 20px;
+.card-grid {
+  margin: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
-.front, .back{
-  width:150px 
-
+.front,
+.back {
+  width: 150px;
 }
 
+@media all and (max-width: 650px) {
+  .card-grid {
+    margin: 30px;
+    grid-gap: 10px;
+  }
+}
+@media all and (max-width: 550px) {
+  .card-grid {
+    margin: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+  }
+}
