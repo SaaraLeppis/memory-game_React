@@ -27,8 +27,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 &nbsp;
 
 ## How it looks
+<img src="./public/img/GameView.png" width="400">
 
-![Screenshot of the game](.\public\img\GameView.png)
 
 ## What I learned
 
